@@ -26,4 +26,8 @@ void Wheel::off_wheel(){
   digitalWrite(left_pin, LOW);
 }
 
+void Wheel::change_speed(bool enable, int speed){
+  analogWrite(enable, speed);
+}
+
 

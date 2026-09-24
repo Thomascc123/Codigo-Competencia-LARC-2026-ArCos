@@ -16,6 +16,7 @@ class Wheel{
     Wheel();
     void change_direction(Direction new_direction);
     void off_wheel();
+    void change_speed(bool enable, int speed);
 };
 
 #endif
