@@ -13,17 +13,18 @@ enum searchTreeStates{
 typedef enum searchTreeStates searchTreeStates;
 
 class searchTreeMachine{
-  searchTreeStates currentState = goFrontPoolsState;
-  unsigned long surroundPoolTime = 0;
-  bool fisrtTimeSurroundPools;
+  public:
+    searchTreeStates currentState = goFrontPoolsState;
+    unsigned long surroundPoolTime = 0;
+    bool fisrtTimeSurroundPools;
 
-  void execute();
+    void execute();
 
-  searchTreeStates goFrontPools();
-  searchTreeStates surroundPool();
-  searchTreeStates goRightPools(int time);
-  searchTreeStates goFrontTrees();
-  searchTreeStates goLeftTrees();
+    searchTreeStates goFrontPools();
+    searchTreeStates surroundPool();
+    searchTreeStates goRightPools(int time);
+    searchTreeStates goFrontTrees();
+    searchTreeStates goLeftTrees();
 };
 
 #endif

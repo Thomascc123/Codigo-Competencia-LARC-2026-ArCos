@@ -13,12 +13,13 @@ typedef enum outOfBoxStates outOfBoxStates;
 
 
 class outOfBoxMachine{
-  outOfBoxStates currentState = outOfBoxState;
-  //cambio de estado s
-  void execute();
-  //estados
-  outOfBoxStates outOfBox();
-  outOfBoxStates firstSearchLeft();
+  public:
+    outOfBoxStates currentState = outOfBoxState;
+    //cambio de estado s
+    void execute();
+    //estados
+    outOfBoxStates outOfBox();
+    outOfBoxStates firstSearchLeft();
 };
 
 #endif

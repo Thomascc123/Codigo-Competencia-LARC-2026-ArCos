@@ -35,7 +35,7 @@ searchTreeStates searchTreeMachine::goRightPools(int time){
 
 searchTreeStates searchTreeMachine::goFrontTrees(){
   car.goFront();
-  if(frontInfrared.getLine() == InLine){
+  if(frontInfrared1.getLine() == InLine || frontInfrared2.getLine() == InLine){
     return goLeftTreesState;
   }
   return goFrontTreesState;
@@ -43,7 +43,7 @@ searchTreeStates searchTreeMachine::goFrontTrees(){
 
 searchTreeStates searchTreeMachine::goLeftTrees(){
   car.goLeft();
-  if(leftInfrared.getLine() == InLine){
+  if(leftInfrared1.getLine() == InLine || leftInfrared2.getLine() == InLine){
     car.stop();
     return onTreesState;
   }

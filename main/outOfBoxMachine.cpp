@@ -3,10 +3,10 @@
 void outOfBoxMachine::execute(){
   switch(currentState){
     case outOfBoxState: 
-      this->outOfBox();
+      this->currentState = this->outOfBox();
       break;
     case firstLeftSearhState:
-      this->firstSearchLeft();
+      this->currentState = this->firstSearchLeft();
       break;
     default:
       break;
@@ -15,7 +15,7 @@ void outOfBoxMachine::execute(){
 
 outOfBoxStates outOfBoxMachine::outOfBox(){
   car.goFront();
-  if(backInfrared.getLine() == InLine){
+  if(backInfrared1.getLine() == InLine || backInfrared2.getLine() == InLine){
     car.stop();
     return firstLeftSearhState;
   }
@@ -24,7 +24,7 @@ outOfBoxStates outOfBoxMachine::outOfBox(){
 
 outOfBoxStates outOfBoxMachine::firstSearchLeft(){
   car.goLeft();
-  if(leftInfrared.getLine() == InLine){  
+  if(leftInfrared1.getLine() == InLine || leftInfrared2.getLine() == InLine){  
     car.stop();
     return onLeftCornerState;
   }
