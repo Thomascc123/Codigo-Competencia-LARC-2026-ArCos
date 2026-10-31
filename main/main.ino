@@ -7,6 +7,9 @@
 #include"outOfBoxMachine.h"
 
 outOfBoxMachine outOfBoxMachine;
+searchTreeMachine searchTreeMachine;
+
+bool firstTime = true;
 
 void setup() {
   Serial.begin(115200);
@@ -25,10 +28,10 @@ void setup() {
   pinMode(WHEEL4R, OUTPUT);
   pinMode(WHEEL4SPEED, OUTPUT);
 
-  rightUpWheel.change_speed(255);
-  leftUpWheel.change_speed(255);
-  rightDownWheel.change_speed(255);
-  leftDownWheel.change_speed(255);
+  rightUpWheel.change_speed(180);
+  leftUpWheel.change_speed(180);
+  rightDownWheel.change_speed(180);
+  leftDownWheel.change_speed(180);
   
   //configurando los sensores sonicos
   pinMode(SONIC_TRIGGER_FRONT, OUTPUT);
@@ -43,17 +46,32 @@ void setup() {
   pinMode(RIGHT_INFRA_2, INPUT);
   pinMode(LEFT_INFRA_1, INPUT);
   pinMode(LEFT_INFRA_2, INPUT);
-  
 }
 
 void loop(){
-  //outOfBoxMachine.execute();
+  if(firstTime == true){
+    searchTreeMachine.currentState = goFrontPoolsState;
+    firstTime = false;
+    delay(5000);
+  }
 
-
-
-  frontSonic.getDistance();
-  delay(500);
-
+  //Serial.println(outOfBoxMachine.currentState);
+  //searchTreeMachine.execute();
+  /*
+  if(outOfBoxMachine.currentState != onLeftCornerState){
+    outOfBoxMachine.execute();
+  }else{
+    searchTreeMachine.execute();
+  }*/
+  //Serial.println(searchTreeMachine.currentState);
+  //Serial.println(outOfBoxMachine.currentState);
+  //delay(500);
+  
+    //Serial.println("\ncccccccccccc\ncambia de estado\nccccccccc\n");
+  
+  //Serial.println(frontSonic.getDistance());
+  //delay(100);
+  
   /*
   delay(4000);
   car.goFront();
@@ -110,7 +128,6 @@ void loop(){
   */
   
   
-  
   /*
   Serial.print("infrarojo frontal 1: ");
   Serial.println(digitalRead(FRONT_INFRA_1));
@@ -129,8 +146,7 @@ void loop(){
   Serial.print("infrarojo izquierdo 2: ");
   Serial.println(digitalRead(LEFT_INFRA_2));
   Serial.println();
-  */
-
   delay(1000);
+  */
   
 }

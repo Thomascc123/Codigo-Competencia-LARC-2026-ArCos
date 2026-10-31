@@ -1,12 +1,16 @@
 #include"outOfBoxMachine.h"
  
 void outOfBoxMachine::execute(){
-  switch(currentState){
+  switch(this->currentState){
     case outOfBoxState: 
       this->currentState = this->outOfBox();
       break;
     case firstLeftSearhState:
       this->currentState = this->firstSearchLeft();
+      break;
+    case onLeftCornerState:
+      Serial.println("hola");
+      delay(1000);
       break;
     default:
       break;
@@ -15,7 +19,7 @@ void outOfBoxMachine::execute(){
 
 outOfBoxStates outOfBoxMachine::outOfBox(){
   car.goFront();
-  if(backInfrared1.getLine() == InLine || backInfrared2.getLine() == InLine){
+  if(backInfrared1.getLine() == InLine){
     car.stop();
     return firstLeftSearhState;
   }
@@ -24,7 +28,7 @@ outOfBoxStates outOfBoxMachine::outOfBox(){
 
 outOfBoxStates outOfBoxMachine::firstSearchLeft(){
   car.goLeft();
-  if(leftInfrared1.getLine() == InLine || leftInfrared2.getLine() == InLine){  
+  if(leftInfrared1.getLine() == InLine && leftInfrared2.getLine() == InLine){  
     car.stop();
     return onLeftCornerState;
   }

@@ -47,10 +47,10 @@
 #define FRONT_INFRA_1 45 // 
 #define FRONT_INFRA_2 39 // 
 #define RIGHT_INFRA_1 35 // 
-#define RIGHT_INFRA_2 41 // bie
-#define LEFT_INFRA_1 43  // 
+#define RIGHT_INFRA_2 41 // bueno
+#define LEFT_INFRA_1 43  // bueno
 #define LEFT_INFRA_2 49  //
-#define BACK_INFRA_1 47 // bien
+#define BACK_INFRA_1 47 // 
 #define BACK_INFRA_2 37 // 
 
 // definiendo los pines de los encoders

@@ -7,6 +7,8 @@ class Sonic{
   public:
     int trigger;
     int ecco;
+    int mean;
+    bool voidMean = true;
 
     Sonic(int trigger, int ecco){
       this->ecco = ecco;
@@ -14,6 +16,8 @@ class Sonic{
     }
 
     float getDistance();
+    float getUnitDistance();
+    void resetMean();
 };
 
 #endif
