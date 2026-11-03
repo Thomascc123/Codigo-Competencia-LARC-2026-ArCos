@@ -49,13 +49,31 @@ void setup() {
 }
 
 void loop(){
+
+
+  
+  if(Serial.available()){
+    int steps = Serial.parseInt();
+    Serial.read();
+    Serial.println(steps);
+    if(steps == 1){
+      arm.takeBall();
+    }else if(steps == 2){
+      Serial.println("derecha");
+      arm.storeRight();
+    }else if(steps == 3){
+      arm.storeLeft();
+    }
+    //myStepper.step(steps);
+    delay(1000);
+  }
+  
+  /*
   if(firstTime == true){
     searchTreeMachine.currentState = goFrontPoolsState;
     firstTime = false;
     delay(5000);
-  }
-
-  //Serial.println(outOfBoxMachine.currentState);
+  }*/
   //searchTreeMachine.execute();
   /*
   if(outOfBoxMachine.currentState != onLeftCornerState){

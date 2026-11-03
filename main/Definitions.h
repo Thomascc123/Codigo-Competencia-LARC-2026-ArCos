@@ -62,12 +62,24 @@
 #define ENCODER3_FASE_A 14
 #define ENCODER3_FASE_B 15
 #define ENCODER4_FASE_A 16
-#define ENCODER4_FASE_B 17
+#define ENCODER4_FASE_B 17 
+
+// definiendo los pines del brazo
+
+#define IN_1_ARM 54
+#define IN_2_ARM 55
+#define IN_3_ARM 56
+#define IN_4_ARM 57
+
+#define CLAW_PIN 8
+#define ARM_SERVO_PIN 7
 
 #include"Wheel.h"
 #include"Car.h"
 #include"Sonic.h"
 #include"Infrared.h"
+#include"ArmStepper.h"
+#include"Arm.h"
 #include"searchTreeMachine.h"
 
 // inicializando ruedas
@@ -98,6 +110,12 @@ extern Infrared rightInfrared2;
 extern Infrared leftInfrared1;
 extern Infrared leftInfrared2;
 
+// inicializando variables del brazo
+
+extern ArmStepper armStepper;
+extern Arm arm;
+
+
 // global variables
 
-#endif
+#endif 

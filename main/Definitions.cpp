@@ -27,3 +27,8 @@ Infrared rightInfrared1(RIGHT_INFRA_1);
 Infrared rightInfrared2(RIGHT_INFRA_2);
 Infrared leftInfrared1(LEFT_INFRA_1);
 Infrared leftInfrared2(LEFT_INFRA_2);
+
+// inicializando brazo
+
+ArmStepper armStepper(2048, IN_1_ARM, IN_2_ARM, IN_3_ARM, IN_4_ARM, 20);
+Arm arm(&armStepper, ARM_SERVO_PIN, CLAW_PIN);
